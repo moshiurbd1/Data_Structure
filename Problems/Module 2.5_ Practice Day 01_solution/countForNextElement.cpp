@@ -13,8 +13,14 @@ for(int i=0; i<n; i++){
 int cnt=0,x;
 
 for(int i=0; i<n; i++){
-    auto it=find(a.begin(),a.end(),a[i]);
-    auto x=find(a.begin(),a.end(),a[i]+1);
+  for(int j=i+1; j<n; j++){
+    if(a[i]==a[j]-1){
+        cnt++;
+        if(a[i]==a[j]){
+            cnt++;
+        }
+    }
+  }
 }
 cout<<cnt;
 return 0;}
