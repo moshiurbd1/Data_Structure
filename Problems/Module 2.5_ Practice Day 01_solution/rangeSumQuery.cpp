@@ -4,7 +4,7 @@ using namespace std;
 int main(){
 long long int n,q;
 cin>>n>>q;
-int a[n],b[n];
+long long int a[n],b[n];
 for(int i=0; i<n; i++){
     cin>>a[i];
 }
@@ -18,7 +18,7 @@ while(q--){
     cin>>l>>r;
     l--;
     r--;
-    int sum=0;
+    long long int sum=0;
     if(l==0){
         sum=b[r];
     }else{
