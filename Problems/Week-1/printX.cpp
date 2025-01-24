@@ -2,20 +2,33 @@
 using namespace std;
 
 int main(){
-int n;
-cin>>n;
-int k=n-1;
-for(int i=0; i<n; i++){
-        for(int s=0; s<=k; s++){
-        cout<<" ";
-    }
-        cout<<"\\";
+         int n;
+         cin>>n;
+         int row=n,col=n;
+         int a[row][col];
 
-    for(int j=i; j<n; j++){
-        cout<<" ";
-    }
-        cout<<"/";
-        cout<<endl;
-}
+
+        for(int i=0; i<n; i++){
+            for(int j=0; j<n; j++){
+                    if(i==j){
+                            cout<<"\\";
+
+                    }else if(i+j==row-1){
+                        cout<<"/";
+                    }else{
+                        cout<<" ";
+                    }
+                    if(i==j && i+j==n-1&&(n/2)+1){
+                        cout<<"X";
+                    }
+
+            }
+            cout<<endl;
+
+         }
+
+
+
 return 0;
 }
+
