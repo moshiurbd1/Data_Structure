@@ -10,7 +10,9 @@ int main(){
 
         for(int i=0; i<n; i++){
             for(int j=0; j<n; j++){
-                    if(i==j){
+                    if(i==j && i+j==n-1){
+                        cout<<"X";
+                    }else if(i==j){
                             cout<<"\\";
 
                     }else if(i+j==row-1){
@@ -18,9 +20,7 @@ int main(){
                     }else{
                         cout<<" ";
                     }
-                    if(i==j && i+j==n-1&&(n/2)+1){
-                        cout<<"X";
-                    }
+
 
             }
             cout<<endl;
