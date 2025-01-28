@@ -11,11 +11,26 @@ public:
     this->next=NULL;
     }
 };
-
-
-int main(){
-
-
-
+void insrt(Node* &head,int a){
+    Node* newNode=new Node(a);
+    if(head==NULL){
+        head=newNode;
+    }
 }
+void print(Node* head){
+Node* tmp=head;
+    while(tmp!=NULL){
+        cout<<tmp->val;
+       tmp = tmp->next;
+    }
+}
+int main(){
+Node*head=NULL;
+int a;
+cin>>a;
+insrt(head,a);
+print(head);
+
+
+
 return 0;}
