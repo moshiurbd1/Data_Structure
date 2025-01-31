@@ -1,3 +1,4 @@
+
 #include<bits/stdc++.h>
 using namespace std;
 class Node{
@@ -14,7 +15,7 @@ public:
 void insrt(Node* &head,int x){
 Node* newNode= new Node(x);
 if(head==NULL){
-    cout<<"Inserted at tail"<<endl;
+    cout<<endl<<"Inserted at tail"<<endl<<endl;
     head=newNode;
     return;
 }
@@ -33,23 +34,38 @@ void insertAtAnyPositionExceptHead(Node* &head,int pos,int v){
     Node* tmp=head;
     for(int i=1; i<pos; i++){
         tmp=tmp->next;
+        //This if condition for error handling of invalid index
+        if(tmp==NULL){
+            cout<<endl<<"Invalid index"<<endl<<endl;
+            return;
+        }
     }
     nNode->next=tmp->next;
     tmp->next=nNode;
 }
 //Insert at head function in linked list
 void insertAtHead(Node* &head,int v){
+
     Node* xNode=new Node(v);
     xNode->next=head;
     head=xNode;
-    cout<<"Inserted at Head"<<endl;
+    cout<<endl<<"Inserted at Head"<<endl<<endl;
 }
 //Delete from position function except head
 void deleteFromPosition(Node* head,int pos){
     Node* tmp=head;
     for(int i=1; i<pos-1; i++){
         tmp=tmp->next;
+        //This if condition for error handling of invalid index
+       if(tmp==NULL){
+            cout<<"Invalid index"<<endl;
+            return;
+        }
     }
+    if(tmp->next==NULL){
+            cout<<"Invalid index"<<endl;
+            return;
+        }
     Node* deleteNode=tmp->next;
     tmp->next=tmp->next->next;
     cout<<"Deleted the value the of position or index: "<<pos<<endl;
@@ -57,6 +73,10 @@ void deleteFromPosition(Node* head,int pos){
 }
 //Delete from head function
 void deleteFromHead(Node* &head){
+    if(head==NULL){
+            cout<<endl<<"Head is not available"<<endl<<endl;
+            return;
+        }
     Node* deleteNode=head;
     head=head->next;
     delete deleteNode;
@@ -78,11 +98,11 @@ int main(){
     Node* head=NULL;
     while(true){
             cout<<"Choose an Option"<<endl;
-    cout<<"Option 1: Insert at tail"<<endl;
-    cout<<"Option 2: Insert at any position except Head:"<<endl;
-    cout<<"Option 3: Print Linked List"<<endl;
-    cout<<"Option 4: Insert at head"<<endl;
-    cout<<"Option 5: Delete from any position"<<endl;
+    cout<<"Option 1: Insert at tail"<<endl;// No error
+    cout<<"Option 2: Insert at any position except Head:"<<endl;// No error
+    cout<<"Option 3: Print Linked List"<<endl;// No error
+    cout<<"Option 4: Insert at head"<<endl;// No error
+    cout<<"Option 5: Delete from any position"<<endl;// No error
     cout<<"Option 6: delete from head"<<endl;
     cout<<"Option 7: Terminate"<<endl;
     int op;

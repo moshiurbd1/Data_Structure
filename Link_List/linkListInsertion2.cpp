@@ -23,14 +23,16 @@ void insrt(Node* &head,int a){
     }
     tmp->next=newNode;
 }
-void print(Node* head){
+void print(Node* head,int cnt){
 Node* tmp=head;
-cout<<"Your Link List: "<<endl;
+cout<<endl<<"Your Link List : "<<endl<<endl;
     while(tmp!=NULL){
-        cout<<tmp->val<<endl;
+        cout<<tmp->val<<" ";
        tmp = tmp->next;
+       cnt++;
     }
-
+    cout<<endl;
+    cout<<endl<<"Size of Linked list : "<<cnt<<endl<<endl;
 }
 int main(){
 Node*head=NULL;
@@ -46,9 +48,9 @@ if(n==1){
     int a;
 cin>>a;
 insrt(head,a);
-print(head);
 }else if(n==2){
-    print(head);
+    int cnt=0;
+    print(head,cnt);
 }else if(n==3){
     break;
 }
