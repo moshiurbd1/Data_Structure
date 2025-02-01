@@ -29,7 +29,7 @@ while(tmp!=NULL){
     cout<<tmp->val<<" ";
     tmp=tmp->next;
 }
-
+cout<<endl;
 }
 int main(){
 Node* head=new Node(10);
