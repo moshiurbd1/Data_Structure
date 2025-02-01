@@ -20,13 +20,18 @@ void insertAtAnyPosition(Node* &head,int pos,int val){
         cout<<endl<<"Inserted at Head"<<endl;
         return;
     }
-    for(int i=0; i<pos-1; i++){
-        tmp=tmp->next;
-    }
-    if(tmp==NULL || pos<0){
+    if(pos<0){
         cout<<endl<<"Invalid index"<<endl;
         return;
     }
+    for(int i=0; i<pos-1; i++){
+        tmp=tmp->next;
+        if(tmp==NULL ){
+        cout<<endl<<"Invalid index"<<endl;
+        return;
+    }
+    }
+
     newNode->next=tmp->next;
     tmp->next=newNode;
     cout<<endl<<"Inserted at you position : "<<pos<<endl;
@@ -40,6 +45,30 @@ void insertAtTail(Node* head,int val){
     }
     tmp->next=newNode;
     cout<<"Inserted at Tail"<<endl;
+}
+
+//Delete any element using position Function
+void deleteFromPosition(Node* &head,int pos){
+Node* tmp=head;
+if(tmp==NULL){
+    cout<<"Index is not available"<<endl;
+}
+if(pos==0){
+    Node* dNode=head;
+    head=head->next;
+    delete dNode;
+    return;
+}
+for(int i=0; i<pos-1; i++){
+    tmp=tmp->next;
+}
+if(tmp->next==NULL){
+    cout<<"Invalid index"<<endl;
+}
+Node* deleteNode=tmp->next;
+tmp->next=tmp->next->next;
+delete deleteNode;
+
 }
 //print function for linked list
 void print(Node*head){
@@ -59,7 +88,8 @@ int main(){
             int option;
     cout<<"Option 1: print the linked list"<<endl;
     cout<<"Option 2: insert At any position"<<endl;
-    cout<<"Option 2: insert At Tail"<<endl;
+    cout<<"Option 3: insert At Tail"<<endl;
+    cout<<"Option 4: delete from any position"<<endl;
     cin>>option;
     if(option==1){
         print(head);
@@ -73,9 +103,15 @@ int main(){
         cout<<"Enter your value : "<<endl;
         cin>>val;
         insertAtTail(head,val);
+    }else if(option==4){
+        int pos;
+        cout<<"Enter your Position: "<<endl;
+        cin>>pos;
+        deleteFromPosition(head,pos);
     }
     }
 
 
 return 0;
 }
+

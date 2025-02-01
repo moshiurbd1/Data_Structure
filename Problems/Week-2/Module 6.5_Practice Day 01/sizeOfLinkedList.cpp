@@ -26,10 +26,12 @@ tmp->next=newNode;
 }
 void print(Node*head){
 Node* tmp=head;
+int cnt=0;
 while(tmp!=NULL){
-    cout<<tmp->val<<" ";
+    cnt++;
     tmp=tmp->next;
 }
+cout<<cnt<<endl;
 }
 int main(){
 Node* head=NULL;
@@ -37,9 +39,10 @@ insertAtTail(head,8);
 int i;
 while(true){
     cin>>i;
-    if(i==-1) break;
+    if(i==-1)break;
     insertAtTail(head,i);
 }
 print(head);
 return 0;
 }
+

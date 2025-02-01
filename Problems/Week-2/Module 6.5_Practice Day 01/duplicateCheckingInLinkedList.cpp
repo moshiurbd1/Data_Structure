@@ -26,20 +26,38 @@ tmp->next=newNode;
 }
 void print(Node*head){
 Node* tmp=head;
+int cnt=0;
 while(tmp!=NULL){
-    cout<<tmp->val<<" ";
+    cnt++;
     tmp=tmp->next;
 }
+cout<<cnt<<endl;
 }
 int main(){
+    int a[100]={0};
 Node* head=NULL;
 insertAtTail(head,8);
 int i;
 while(true){
     cin>>i;
-    if(i==-1) break;
+    if(i==-1)break;
+    a[i]++;
     insertAtTail(head,i);
 }
-print(head);
+
+int flag=0;
+for(int i=0; i<100; i++){
+    if(a[i]>1){
+        flag=1;
+        break;
+    }
+}
+if(flag==1){
+        cout<<"YES"<<endl;
+    }else{
+        cout<<"NO"<<endl;
+    }
 return 0;
 }
+
+
