@@ -1,3 +1,4 @@
+
 #include<bits/stdc++.h>
 using namespace std;
 class Node{
@@ -20,36 +21,42 @@ void insertAtHeadAndTail(Node* &head, Node* &tail, int val){
     tail->next=newNode;
     tail=newNode;
 }
-void print(Node*head){
-Node* tmp=head;
-while(tmp!=NULL){
-    cout<<tmp->val<<" ";
-    tmp=tmp->next;
-}
-cout<<endl;
-}
+
 int main(){
-Node* head=NULL;
+int t;
+cin>>t;
+for(int i=0; i<t; i++){
+    Node* head=NULL;
 Node* tail=NULL;
 int val;
 while(true){
-    cout<<"Enter a value to insert:"<<endl;
     cin>>val;
     if(val==-1)break;
     insertAtHeadAndTail(head,tail,val);
 
 }
-for(Node* i=head; i->next!=NULL; i=i->next){
- //output using for loop       cout<<i->val<<" ";
-    for(Node* j=i->next; j!=NULL; j=j->next){
-        if(i->val>j->val){
-            swap(i->val,j->val);
+
+
+int x,cnt=0,index,flag=0;
+cin>>x;
+
+for(Node* i=head; i!=NULL; i=i->next){
+        cnt++;
+        if(i->val==x){
+            index=cnt-1;
+            flag=1;
+            break;
         }
-    }
+
+
 }
-print(head);
-cout<<endl;
-cout<<size(head);
+if(flag==1){
+    cout<<index<<endl;
+}else{
+    cout<<-1<<endl;
+}
+}
 return 0;
 }
+
 

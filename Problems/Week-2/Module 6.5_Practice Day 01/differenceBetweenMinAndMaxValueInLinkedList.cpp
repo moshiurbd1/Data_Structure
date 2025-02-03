@@ -20,36 +20,30 @@ void insertAtHeadAndTail(Node* &head, Node* &tail, int val){
     tail->next=newNode;
     tail=newNode;
 }
-void print(Node*head){
-Node* tmp=head;
-while(tmp!=NULL){
-    cout<<tmp->val<<" ";
-    tmp=tmp->next;
-}
-cout<<endl;
-}
+
 int main(){
 Node* head=NULL;
 Node* tail=NULL;
 int val;
 while(true){
-    cout<<"Enter a value to insert:"<<endl;
     cin>>val;
     if(val==-1)break;
     insertAtHeadAndTail(head,tail,val);
 
 }
-for(Node* i=head; i->next!=NULL; i=i->next){
- //output using for loop       cout<<i->val<<" ";
-    for(Node* j=i->next; j!=NULL; j=j->next){
-        if(i->val>j->val){
-            swap(i->val,j->val);
+int minElement=INT_MAX,maxElement=INT_MIN;
+for(Node* i=head; i!=NULL; i=i->next){
+        if(i->val>maxElement){
+            maxElement=i->val;
         }
-    }
+        if(i->val<minElement){
+            minElement=i->val;
+        }
+
 }
-print(head);
-cout<<endl;
-cout<<size(head);
+int x=maxElement-minElement;
+cout<<x<<endl;
 return 0;
 }
+
 

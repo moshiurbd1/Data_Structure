@@ -20,36 +20,61 @@ void insertAtHeadAndTail(Node* &head, Node* &tail, int val){
     tail->next=newNode;
     tail=newNode;
 }
-void print(Node*head){
+int sizeOfLinkedList(Node*head){
 Node* tmp=head;
+int cnt=0;
 while(tmp!=NULL){
-    cout<<tmp->val<<" ";
+    cnt++;
     tmp=tmp->next;
 }
-cout<<endl;
+return cnt;
+}
+
+void compareLinkedList(Node*head,Node*head1){
+Node* tmp=head;
+Node* tmp1=head1;
+
+while(tmp!=NULL){
+    if(tmp->val!=tmp1->val){
+        cout<<"NO"<<endl;
+        return;
+    }
+    tmp=tmp->next;
+    tmp1=tmp1->next;
+}
+cout<<"YES"<<endl;
 }
 int main(){
 Node* head=NULL;
 Node* tail=NULL;
+
+Node* head1=NULL;
+Node* tail1=NULL;
 int val;
 while(true){
-    cout<<"Enter a value to insert:"<<endl;
     cin>>val;
     if(val==-1)break;
     insertAtHeadAndTail(head,tail,val);
 
 }
-for(Node* i=head; i->next!=NULL; i=i->next){
- //output using for loop       cout<<i->val<<" ";
-    for(Node* j=i->next; j!=NULL; j=j->next){
-        if(i->val>j->val){
-            swap(i->val,j->val);
-        }
-    }
+while(true){
+    cin>>val;
+    if(val==-1)break;
+    insertAtHeadAndTail(head1,tail1,val);
+
 }
-print(head);
-cout<<endl;
-cout<<size(head);
+
+int x=sizeOfLinkedList(head);
+int y=sizeOfLinkedList(head1);
+if(x!=y){
+    cout<<"NO"<<endl;
+}else{
+compareLinkedList(head,head1);
+}
+
+
+
 return 0;
 }
+
 
