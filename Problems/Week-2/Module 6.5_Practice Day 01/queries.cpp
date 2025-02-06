@@ -10,6 +10,16 @@ public:
     this->next=NULL;
     }
     };
+int sizeOfLinkedList(Node*head){
+Node* tmp=head;
+int cnt=0;
+while(tmp!=NULL){
+    cnt++;
+    tmp=tmp->next;
+}
+return cnt;
+}
+
 void insertAtAnyPosition(Node* &head,int pos,int val){
     Node* newNode=new Node(val);
     if(pos==0){
@@ -18,10 +28,10 @@ void insertAtAnyPosition(Node* &head,int pos,int val){
         return;
     }else if(pos==1){
             if(head==NULL){
-                head=newNode;
-                return;
+            head=newNode;
+            return;
             }
-    Node* tmp=head;
+            Node* tmp=head;
     while(tmp->next!=NULL){
         tmp=tmp->next;
     }
@@ -32,7 +42,7 @@ void insertAtAnyPosition(Node* &head,int pos,int val){
         head=head->next;
         delete dNode;
         return;
-    }else if(pos==2 && val>0){
+    }else if(pos==2){
         Node* tmpx=head;
         for(int i=0; i<val-1; i++){
             tmpx=tmpx->next;
@@ -46,7 +56,13 @@ void insertAtAnyPosition(Node* &head,int pos,int val){
         Node* deleteNode=tmpx->next;
         tmpx->next=tmpx->next->next;
         delete deleteNode;
+    }else{
+
+
     }
+
+
+
 
 
 }
