@@ -58,16 +58,20 @@ void print(Node* head){
 int main(){
 Node* head=NULL;
 Node* tail=NULL;
-cout<<"Enter your Position and value: "<<endl;
-int pos,val;
-while(true){
-    cin>>pos>>val;
-    if(val==-1){
-        break;
-    }
+
+int n;
+cout<<"Option 1: Insert Value"<<endl;
+cout<<"Option 2: Delete value"<<endl;
+cin>>n;
+if(n==1){
+    cout<<"Enter your Position and value: "<<endl;
+    int pos,val;
     insertAtAnyPosition(pos,val,head,tail);
     print(head);
+
 }
+
+
 
 return 0;
 }
