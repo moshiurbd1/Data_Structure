@@ -53,8 +53,6 @@ void insertAtPosition(Node* &head,Node* tail,int pos,int val){
 }
 
 
-
-
 void print(Node* head){
 while(head!=NULL){
     cout<<head->val<<" ";

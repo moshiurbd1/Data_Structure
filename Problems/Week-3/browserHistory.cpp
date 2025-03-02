@@ -44,6 +44,11 @@ int main(){
         insertAtTail(head,tail,x);
     }
 print(head);
+int q;
+cin>>q;
+while(q--){
+
+}
 
 
 

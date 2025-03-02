@@ -33,11 +33,6 @@ void insertAtPosition(Node* &head,Node* &tail,int pos,int val){
         head->prev=newNode;
         head=newNode;
 
-    }else if(pos==Size(head)-1){
-            tail->next==newNode;
-            newNode->prev=tail;
-            tail=newNode;
-            return;
     }else{
         Node* tmp=head;
         for(int i=1; i<=pos-1; i++){
@@ -79,8 +74,9 @@ int main(){
         }else{
         insertAtPosition(head,tail,pos,val);
          print(head);
-         cout<<"R-> ";
+         cout<<"R -> ";
          printReverse(head);
+         cout<<endl;
         }
 
     }

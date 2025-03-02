@@ -25,7 +25,6 @@ void insertAtTail(Node* &head, Node* &tail,int val){
 
 }
 
-
 void print(Node* head){
     Node* tmp=head;
 while(tmp!=NULL){
@@ -72,7 +71,6 @@ int main(){
     }else{
         cout<<"Not Palindrome";
     }
-
 
 return 0;
 }
