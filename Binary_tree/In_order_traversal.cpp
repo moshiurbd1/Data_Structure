@@ -12,13 +12,13 @@ public:
         this->right=NULL;
     }
 };
-void preorder_traversal(Node* root){
+void in_order_traversal(Node* root){
 
     if(root==NULL)return;
 
-    preorder_traversal(root->left);
+    in_order_traversal(root->left);
     cout<<root->val<<" ";
-    preorder_traversal(root->right);
+    in_order_traversal(root->right);
 }
 int main(){
 Node* root=new Node(10);
@@ -41,7 +41,7 @@ d->left=f;
 d->right=g;
 h->right=i;
 
-preorder_traversal(root);
+in_order_traversal(root);
 return 0;
 }
 

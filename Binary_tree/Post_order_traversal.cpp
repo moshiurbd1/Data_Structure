@@ -12,10 +12,10 @@ public:
         this->right=NULL;
     }
 };
-void preorder_traversal(Node* root){
+void post_order_traversal(Node* root){
     if(root==NULL)return;
-    preorder_traversal(root->left);
-    preorder_traversal(root->right);
+    post_order_traversal(root->left);
+    post_order_traversal(root->right);
     cout<<root->val<<" ";
 }
 int main(){
@@ -39,7 +39,7 @@ d->left=f;
 d->right=g;
 h->right=i;
 
-preorder_traversal(root);
+post_order_traversal(root);
 return 0;
 }
 
