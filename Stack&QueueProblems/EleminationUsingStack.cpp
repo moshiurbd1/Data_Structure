@@ -17,8 +17,6 @@ for(char c:s){
         st.push(c);
     }else if(st.top()=='0'&&c=='1'){
         st.pop();
-    }else if(st.top()=='1'&& c=='0'){
-        st.pop();
     }
 }
 if(st.empty()){
@@ -29,3 +27,4 @@ if(st.empty()){
 }
 return 0;
 }
+
