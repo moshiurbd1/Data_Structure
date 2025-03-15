@@ -16,11 +16,11 @@ void level_order_traversal(Node* root){
     queue<Node*>q;
     q.push(root);
     while(!q.empty()){
-        Node* f=q.front();
+        Node* n=q.front();
         q.pop();
-        cout<<f->val<<" ";
-        if(f->left)q.push(f->left);
-        if(f->right)q.push(f->right);
+        cout<<n->val<<" ";
+        if(n->left)q.push(n->left);
+        if(n->right)q.push(n->right);
     }
 }
 int main(){
