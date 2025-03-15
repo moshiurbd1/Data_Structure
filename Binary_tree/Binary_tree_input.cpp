@@ -23,7 +23,8 @@ Node* input_tree(){
     else
         root=new Node(val);
     queue<Node*>q;
-    if(root)q.push(root);
+    if(root)
+        q.push(root);
 
     while(!q.empty()){
             Node* p=q.front();
