@@ -22,7 +22,9 @@ Node* input_tree(){
         root=NULL;
     else
         root=new Node(val);
+
     queue<Node*>q;
+
     if(root)
         q.push(root);
 
@@ -37,6 +39,7 @@ Node* input_tree(){
                 myleft=NULL;
             else
                 myleft= new Node(l);
+
             if(r==-1)
                 myright=NULL;
             else
